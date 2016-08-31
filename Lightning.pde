@@ -1,10 +1,10 @@
-int startX = 0;
-int startY = 150;
-int endX = 0;
-int endY = 150;
-int redValue = (int)(math.Random()*255);
-int greenValue = (int)(math.Random()*255);
-int blueValue = (int)(math.Random()*255);
+int startX = 150;
+int startY = 0;
+int endX = 150;
+int endY = 0;
+int redValue = (int)(Math.random()*255);
+int greenValue = (int)(Math.random()*255);
+int blueValue = (int)(Math.random()*255);
 
 void setup()
 {
@@ -14,16 +14,25 @@ void setup()
 }
 void draw()
 {
-	endX = startX + (int)(math.Random()*10);
-	endY = startY + (int)(math.Random()*19)-9;
-	startX = endX;
-	startY = endY;
 	stroke(redValue,greenValue,blueValue);
-	line (startX,startY,endX,endY);
+	while (endY < 300)
+	{
+			endX = startX + (int)(Math.random()*19)-9;
+			endY = startY + (int)(Math.random()*10);
+			line (startX,startY,endX,endY);
+			startX = endX;
+			startY = endY;
+		}
 
 }
 void mousePressed()
 {
-
+	startX = 150;
+	startY = 0;
+	endX = 150;
+	endY = 0;
+	redValue = (int)(Math.random()*255);
+	greenValue = (int)(Math.random()*255);
+	blueValue = (int)(Math.random()*255);
 }
 
